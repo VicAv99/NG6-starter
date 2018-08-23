@@ -1,9 +1,9 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-brand">{{ $ctrl.name }}</div>
+    <div class="navbar-brand white-header">{{ $ctrl.name }}</div>
     <ul class="nav navbar-nav">
       <li ng-repeat="nav in $ctrl.navLinks">
-        <a class="navbar-brand" ui-sref="{{ nav }}">{{ nav }}</a>
+        <a class="navbar-brand hover-links" ui-sref="{{ nav }}">{{ nav }}</a>
       </li>
     </ul>
   </div>

@@ -3,4 +3,11 @@
 .navbar {
   border-radius: 0;
   margin-bottom: 0;
+  .white-header {
+    color: white;
+  }
+  .hover-links:hover {
+    background-color: $lightBg !important;
+    border-radius: 10px;
+  }
 }
