@@ -1,11 +1,37 @@
 @import '../common';
 
-.hero {
-  background-color: $darkBg;
-  height: 50rem;
-  padding: 3rem;
+.jumbotron {
+  width: 100%;
+  // box shadow
+  -moz-box-shadow:    0 10px 8px -5px #ccc;
+  -webkit-box-shadow: 0 10px 8px -5px #ccc;
+  box-shadow:         0 10px 8px -5px #ccc;
 
-  * {
-    color: $lightText;
+  // bottom radius
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  // crazy gradiance
+  background: linear-gradient(211deg, #0277bd, #5ea8d5, #83f3d7, #1de9b6);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 43s ease infinite;
+  -moz-animation: AnimationName 43s ease infinite;
+  animation: AnimationName 43s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+      0%{background-position:0% 11%}
+      50%{background-position:100% 90%}
+      100%{background-position:0% 11%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:0% 11%}
+      50%{background-position:100% 90%}
+      100%{background-position:0% 11%}
+  }
+  @keyframes AnimationName {
+      0%{background-position:0% 11%}
+      50%{background-position:100% 90%}
+      100%{background-position:0% 11%}
   }
 }
