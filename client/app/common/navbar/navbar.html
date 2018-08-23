@@ -1,8 +1,10 @@
-<nav class="navbar">
-  <div class="logo">
-    <h1><a ui-sref="home">{{ $ctrl.name }}</a></h1>
-  </div>
-  <div class="nav-links">
-    <span><a ui-sref="about">about</a></span>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-brand">{{ $ctrl.name }}</div>
+    <ul class="nav navbar-nav">
+      <li ng-repeat="nav in $ctrl.navLinks">
+        <a class="navbar-brand" ui-sref="{{ nav }}">{{ nav }}</a>
+      </li>
+    </ul>
   </div>
 </nav>

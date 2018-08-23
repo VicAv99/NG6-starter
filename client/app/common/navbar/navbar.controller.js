@@ -1,6 +1,7 @@
 class NavbarController {
   constructor() {
-    this.name = 'navbar';
+    this.navLinks = ['home', 'about'];
+    this.name = 'ES6 STARTER';
   }
 }
 
