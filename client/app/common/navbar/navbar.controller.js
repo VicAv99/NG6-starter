@@ -1,6 +1,6 @@
 class NavbarController {
   constructor($http) {
-    this.navLinks = ['home', 'about'];
+    this.navLinks = ['home', 'tasks'];
     this.name = 'ES6 STARTER';
     this.http = $http;
     this.requests = [];

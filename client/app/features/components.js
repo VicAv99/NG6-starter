@@ -1,11 +1,11 @@
 import angular from 'angular';
 import Home from './home/home';
-import About from './about/about';
+import Task from './tasks/task';
 import homeService from './home/home.service'
 
 let componentModule = angular.module('app.components', [
   Home,
-  About,
+  Task,
   homeService
 ])
 
