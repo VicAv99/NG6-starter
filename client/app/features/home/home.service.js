@@ -39,6 +39,7 @@ class HomeService {
 }
 
 HomeService.$inject = ['$http'];
+
 let homeService = angular.module('homeServiceModule', [])
   .service('homeService', HomeService).name;
 
