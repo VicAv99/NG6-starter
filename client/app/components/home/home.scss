@@ -1,1 +1,20 @@
-
+main {
+  height: 100vh;
+  background-color: whitesmoke;
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+    .list {
+      grid-column: 2 / 7;
+    }
+    .form {
+      grid-column: 7 / 12;
+    }
+    .json {
+      grid-column: 2 / 12;
+      grid-row: 2;
+    }
+  }
+}
