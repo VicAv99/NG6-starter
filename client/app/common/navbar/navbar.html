@@ -6,11 +6,12 @@
         <a class="navbar-brand hover-links" ui-sref="{{ nav }}">{{ nav }}</a>
       </li>
     </ul>
-    <form class="navbar-form navbar-right" role="search">
+    <form class="navbar-form navbar-right" role="search" ng-submit="$ctrl.searchProjects($ctrl.form.search)">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search...">
+        <input type="text" class="form-control" placeholder="Search..."
+        ng-model="$ctrl.form.search" name="search">
       </div>
-      <a type="submit" class="btn btn-primary active">Submit</a>
+      <button type="submit" class="btn btn-primary active">Submit</button>
     </form>
   </div>
 </nav>
