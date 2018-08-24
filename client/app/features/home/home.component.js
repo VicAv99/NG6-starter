@@ -2,8 +2,12 @@ import template from './home.html';
 import controller from './home.controller';
 import './home.scss';
 
+const bindings = {
+
+};
+
 let homeComponent = {
-  bindings: {},
+  bindings,
   template,
   controller
 };

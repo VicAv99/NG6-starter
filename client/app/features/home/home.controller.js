@@ -1,10 +1,59 @@
 class HomeController {
   confirm;
-  constructor($http) {
-    this.http = $http;
-    this.url = 'https://levelup-json.herokuapp.com/Q';
-    this.requests = [];
+  requests = [];
+
+  constructor(homeService) {
+    this.homeService = homeService;
+    this.initForm();
     this.getHelpRequests();
+  }
+
+  getHelpRequests() {
+    this.homeService
+      .getRequests()
+      .then(res => this.requests = res.data,
+        err => console.log('error', err));
+  }
+
+  save(req) {
+    if (req.id) {
+      this.updateRequest(req);
+    } else {
+      this.createRequest(req);
+    }
+  }
+
+  createRequest(req) {
+    this.homeService
+      .create(req)
+      .then(res => this.getHelpRequests(),
+        err => console.log(err))
+      .then(() => this.clearForm());
+  }
+
+  updateRequest(req) {
+    const { $$hashKey, ...payload } = req;
+
+    this.homeService
+      .update(payload)
+      .then(res => this.getHelpRequests(),
+        err => console.log('error', err))
+      .then(() => this.clearForm());
+  }
+
+  deleteRequest(id) {
+    this.confirm = confirm('Are you sure you want to delete?');
+
+    if (this.confirm) {
+      this.homeService
+        .remove(id)
+        .then(res => this.getHelpRequests(),
+          err => console.log('error', err))
+        .then(() => this.getHelpRequests());
+    }
+  }
+
+  initForm() {
     this.form = {
       id: null,
       requester: '',
@@ -14,12 +63,6 @@ class HomeController {
       description: '',
       createdAt: ''
     }
-  }
-
-  getHelpRequests() {
-    return this.http
-      .get(this.url)
-      .then(res => (this.requests = res.data));
   }
 
   patchForm(form) {
@@ -37,54 +80,8 @@ class HomeController {
       createdAt: ''
     };
   }
-
-  save(req) {
-    if (req.id) {
-      this.updateRequest(req);
-    } else {
-      this.createRequest(req);
-    }
-  }
-
-  createRequest(req) {
-    return this.http
-      .post(this.url, req)
-      .then(res => {
-        this.getHelpRequests();
-      },
-        err => console.log('error', err)
-      ).then(() => this.clearForm(req));
-  }
-
-  updateRequest(req) {
-    const { $$hashKey, ...payload } = req;
-    if (!req.id) {
-      this.createRequest(payload);
-    } else {
-      return this.http
-        .patch(`${this.url}/${payload.id}`)
-        .then(res => {
-          this.getHelpRequests();
-        },
-          err => console.log('error', err)
-        ).then(() => this.clearForm(req));
-    }
-  }
-
-  deleteRequest(id) {
-    this.confirm = confirm('Are you sure you want to delete?');
-    if (this.confirm) {
-      return this.http
-        .delete(`${this.url}/${id}`)
-        .then(res => {
-          this.getHelpRequests();
-        },
-          err => console.log('error', err)
-        ).then(() => this.clearForm(req));
-    }
-  }
 }
 
-HomeController.$inject = ['$http'];
+HomeController.$inject = ['homeService'];
 
 export default HomeController;
