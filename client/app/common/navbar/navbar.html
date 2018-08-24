@@ -6,7 +6,7 @@
         <a class="navbar-brand hover-links" ui-sref="{{ nav }}">{{ nav }}</a>
       </li>
     </ul>
-    <form class="navbar-form navbar-right" role="search" ng-submit="$ctrl.searchProjects($ctrl.form.search)">
+    <form class="navbar-form navbar-right" role="search" ng-submit="$ctrl.search($ctrl.form.search)">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search..."
         ng-model="$ctrl.form.search" name="search">

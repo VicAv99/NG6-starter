@@ -1,21 +1,20 @@
 class NavbarController {
-  constructor($http) {
-    this.navLinks = ['home', 'tasks'];
-    this.name = 'ES6 STARTER';
-    this.http = $http;
-    this.requests = [];
-    this.url = 'https://levelup-json.herokuapp.com/Q'
+  requests = [];
+  name = 'ES6 STARTER';
+  navLinks = ['home', 'tasks'];
+  constructor(homeService) {
+    this.homeService = homeService;
     this.form = {
       search: ''
     }
   }
 
-  searchProjects(search) {
-    return this.http
-      .get(`${this.url}?q=${search}`);
+  search(search) {
+    console.log(search)
+    this.homeService.searchRequest(search);
   }
 }
 
-NavbarController.$inject = ['$http'];
+NavbarController.$inject = ['homeService'];
 
 export default NavbarController;
