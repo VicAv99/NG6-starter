@@ -1,6 +1,6 @@
 <navbar></navbar>
 <h1 style="text-align: center;">{{ $ctrl.name }}</h1>
-<!-- <section> -->
+<section>
   <div class="wrapper">
     <div class="todo-grid">
       <!-- Todo form -->
@@ -51,7 +51,9 @@
         </a>
       </div>
     </div>
+    <div class="json-grid">
+      <pre>{{ $ctrl.form | json }}</pre>
+    </div>
   </div>
-<!-- </section> -->
+</section>
 
-<pre>{{ $ctrl.form | json }}</pre>

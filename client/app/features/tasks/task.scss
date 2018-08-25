@@ -11,6 +11,10 @@
       margin-top: -50px;
     }
   }
+  > .json-grid {
+    grid-column: 2 / 12;
+    grid-row: 2;
+  }
 }
 
 form {
