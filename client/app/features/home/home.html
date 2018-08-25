@@ -10,13 +10,10 @@
         <a class="list-group-item" ng-click="$ctrl.patchForm(req)">
           <h4 class="list-group-item-heading">{{req.name}} | {{req.requester}}</h4>
           <h6 class="list-group-item-text">{{req.description}}</h6>
-          <button type="button"
-                  class="btn btn-secondary"
-                  ng-click="$ctrl.deleteRequest(req.id)">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true">
-              remove
-            </span>
-          </button>
+          <span class="badge">
+            <div class="glyphicon glyphicon-remove remove"
+                  ng-click="$ctrl.deleteRequest(req.id)"></div>
+          </span>
           <p class="list-group-item-text" style="text-align: right;">- <strong>created:</strong> {{req.createdAt}}</p>
         </a>
       </div>

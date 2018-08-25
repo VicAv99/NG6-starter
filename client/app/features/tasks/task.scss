@@ -24,10 +24,25 @@ form {
     > .form-group {
         margin-bottom: 0;
         margin-top: 5px;
-        width: 80%;
+        margin-right: 1rem;
+        width: 85%;
     }
     button {
-      margin-left: 50px;
+      margin-left: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1311px) {
+  .checkbox {
+    display: flex;
+    > label {
+      > input {
+        margin-top: 5px;
+      }
+    }
+    button {
+      margin-top: -5px;
     }
   }
 }

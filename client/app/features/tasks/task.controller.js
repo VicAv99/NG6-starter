@@ -5,7 +5,7 @@ class TaskController {
     this.taskService = taskService;
     this.getAllTodos();
     this.initForm();
-    this.name = 'task';
+    this.name = 'Ng6 Starter Tasks';
   }
 
   getAllTodos() {
