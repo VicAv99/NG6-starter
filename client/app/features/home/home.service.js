@@ -28,7 +28,7 @@ class HomeService {
 
   update(request) {
     return this.http
-      .patch(`${this.url}/${request.id}`);
+      .patch(`${this.url}/${request.id}`, request);
   }
 
   remove(requestId) {

@@ -1,3 +1,33 @@
-.about {
-  color: red;
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+  >.todo-grid {
+    grid-column: 2 / 12;
+    .badge {
+      pointer-events: all;
+      cursor: pointer;
+      margin-top: -50px;
+    }
+  }
+}
+
+form {
+  &.todo-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .right {
+    display: flex;
+    justify-content: space-between;
+    > .form-group {
+        margin-bottom: 0;
+        margin-top: 5px;
+        width: 80%;
+    }
+    button {
+      margin-left: 50px;
+    }
+  }
 }

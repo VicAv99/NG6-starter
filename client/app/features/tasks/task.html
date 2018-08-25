@@ -1,5 +1,57 @@
 <navbar></navbar>
-<h1>{{ $ctrl.name }}</h1>
-<section>
-  About us.
-</section>
+<h1 style="text-align: center;">{{ $ctrl.name }}</h1>
+<!-- <section> -->
+  <div class="wrapper">
+    <div class="todo-grid">
+      <!-- Todo form -->
+      <form class="todo-form" ng-submit="$ctrl.saveTodo($ctrl.form)">
+        <div class="form-group">
+          <input type="text" class="form-control"
+          placeholder="title..." id="titleId" ng-model="$ctrl.form.title">
+        </div>
+        <div class="right">
+          <div class="form-group">
+            <input type="text" class="form-control"
+            placeholder="description..." id="descId"  ng-model="$ctrl.form.description">
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-model="$ctrl.form.urgent">
+              Urgent
+            </label>
+            <button class="btn btn-primary active" type="submit">Create</button>
+          </div>
+        </div>
+      </form>
+
+
+      <div class="list-group">
+        <a class="list-group-item"
+           ng-repeat="todo in $ctrl.todos"
+           ng-click="$ctrl.patchForm(todo)">
+          <!-- List Title -->
+          <h3 class="list-group-item-heading">
+            {{ todo.title | uppercase }}
+          </h3>
+          <!-- List Description -->
+          <h5 class="list-group-item-text">
+            {{ todo.description }}
+          </h5>
+
+          <span class="label label-success" ng-if="todo.completed">
+              {{ todo.urgent ? 'Done' : '' }}
+            </span>
+          <span class="label label-danger" ng-if="todo.urgent">
+            {{ todo.urgent ? 'Urgent' : '' }}
+          </span>
+          <span class="badge">
+            <div class="glyphicon glyphicon-remove remove"
+            ng-click="$ctrl.removeTodo(todo.id)"></div>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+<!-- </section> -->
+
+<pre>{{ $ctrl.form | json }}</pre>
