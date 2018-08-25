@@ -1,12 +1,23 @@
 @import '../common';
+
 .navbar {
   border-radius: 0;
   margin-bottom: 0;
   .white-header {
+    font-size: 24px;
     color: white;
   }
-  .hover-links:hover {
-    background-color: $lightBg !important;
-    border-radius: 10px;
+  .hover-links {
+    font-size: 16px;
+    &:hover {
+      font-size: 18px;
+    }
   }
+  // .hover-links:hover {
+  //   background-color: $lightBg !important;
+  //   border-radius: 10px;
+  //   padding: 14px;
+  //   // width: 80%;
+  //   // margin-left: 10%;
+  // }
 }

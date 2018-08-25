@@ -1,7 +1,7 @@
 class NavbarController {
   requests = [];
   name = 'ES6 STARTER';
-  navLinks = ['home', 'tasks'];
+  navLinks = [{ link: 'home', label: 'HOME' }, { link: 'tasks', label: 'TASKS' }];
   constructor(homeService) {
     this.homeService = homeService;
     this.form = {
