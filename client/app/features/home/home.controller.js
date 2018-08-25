@@ -49,7 +49,7 @@ class HomeController {
         .remove(id)
         .then(res => this.getHelpRequests(),
           err => console.log('error', err))
-        .then(() => this.getHelpRequests());
+        .then(() => this.clearForm());
     }
   }
 
