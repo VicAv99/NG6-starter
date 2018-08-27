@@ -59,7 +59,8 @@
     "start": "gulp serve",
     "test": "karma start",
     "watch": "gulp serve",
-    "webpack": "gulp webpack"
+    "webpack": "gulp webpack",
+    "deploy": "gulp webpack && cp ./dist/index.html ./dist/200.html && surge ./dist https://ng6-app.surge.sh/"
   },
   "keywords": [
     "angular",
