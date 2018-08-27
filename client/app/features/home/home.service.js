@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 class HomeService {
-  url = 'https://levelup-json.herokuapp.com/Q';
+  url = 'https://levelup-json-jbbfoyseci.now.sh/Q';
   constructor($http) {
     this.http = $http;
   }

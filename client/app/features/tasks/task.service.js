@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 class TaskService {
-  url = 'https://levelup-json.herokuapp.com/todos';
+  url = 'https://levelup-json-jbbfoyseci.now.sh/todos';
   constructor($http) {
     this.http = $http;
   }
