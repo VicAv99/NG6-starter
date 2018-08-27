@@ -66,7 +66,7 @@ class HomeController {
   }
 
   patchForm(form) {
-    this.form = form;
+    this.form = Object.assign({}, form);
   }
 
   clearForm(form) {

@@ -58,7 +58,7 @@ class TaskController {
   }
 
   patchForm(form) {
-    this.form = form;
+    this.form = Object.assign({}, form);
   }
 
   resetForm(form) {
