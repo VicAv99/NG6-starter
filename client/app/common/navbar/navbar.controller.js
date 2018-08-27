@@ -10,7 +10,7 @@ class NavbarController {
   }
 
   search(search) {
-    console.log(search)
+    console.log('SRCH', search)
     this.homeService.searchRequest(search);
   }
 }

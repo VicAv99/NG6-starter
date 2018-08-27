@@ -10,6 +10,7 @@
         <a class="list-group-item" ng-click="$ctrl.patchForm(req)">
           <h4 class="list-group-item-heading">{{req.name}} | {{req.requester}}</h4>
           <h6 class="list-group-item-text">{{req.description}}</h6>
+          <h6 class="list-group-item-text">Need help from {{req.assignee}} for the {{req.project}} project</h6>
           <span class="badge">
             <div class="glyphicon glyphicon-remove remove"
                   ng-click="$ctrl.deleteRequest(req.id)"></div>
