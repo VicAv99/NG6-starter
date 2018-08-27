@@ -6,6 +6,7 @@ main {
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 20px;
     grid-auto-rows: minmax(100px, auto);
+    background-color: whitesmoke;
     .list {
       grid-column: 2 / 7;
       .badge {

@@ -3,6 +3,7 @@
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 20px;
   grid-auto-rows: minmax(100px, auto);
+  background-color: whitesmoke;
   >.todo-grid {
     grid-column: 2 / 12;
     .badge {
